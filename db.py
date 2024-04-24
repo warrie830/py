@@ -62,6 +62,40 @@ def get_total_pages(group_url):
         print("Failed to fetch page")
     return None
 
+# 获取页面标题
+def get_page_title(url):
+    html = fetch_page(url)
+    if html:
+        soup = BeautifulSoup(html, 'html.parser')
+        title = soup.title.string
+        return title
+    else:
+        print("Failed to fetch page")
+        return None
+
+# 给一个帖子id，返回这个帖子的所有回复
+def get_all_replies(id,interval_seconds=60,filename='replies.txt'):
+    group_url = f'https://www.douban.com/group/topic/{id}/'  # 替换成你要爬取的小组帖子链接
+    interval_seconds = 60  # 定时爬取间隔，单位为秒
+    # 获取标题名作为文件名
+
+    filename = get_page_title(group_url) + '.txt'
+    
+    total_pages = get_total_pages(group_url)
+    if total_pages:
+        replies = []
+        for page in range(1, total_pages + 1):
+            page_url = f"{group_url}?start={page * 100}"
+            html = fetch_page(page_url)
+            if html:
+                page_replies = extract_replies(html)
+                replies.extend(page_replies)
+            else:
+                print(f"Failed to fetch page {page}")
+        return replies
+    else:
+        return None
+
 # 主程序，定时爬取回复内容
 def main():
     group_url = 'https://www.douban.com/group/topic/304993783/'  # 替换成你要爬取的小组帖子链接
