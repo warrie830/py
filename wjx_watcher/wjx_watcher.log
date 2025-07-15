@@ -1,0 +1,11 @@
+2025-05-30 15:22:35,213 - __main__ - INFO - 问卷星监控程序启动
+2025-05-30 15:22:35,214 - __main__ - INFO - 问卷URL: https://www.wjx.cn/vm/314729177.aspx
+2025-05-30 15:22:35,214 - __main__ - INFO - 检查间隔: 10分钟
+2025-05-30 15:22:35,215 - __main__ - INFO - 开始检查问卷: https://www.wjx.cn/vm/314729177.aspx
+2025-05-30 15:22:35,371 - __main__ - ERROR - 获取问卷回答数量失败: 404 Client Error: Not Found for url: https://www.wjx.cn/vm/314729177.aspx
+2025-05-30 15:22:35,371 - __main__ - ERROR - 获取回答数量失败，跳过本次检查
+2025-05-30 15:32:35,898 - __main__ - INFO - 开始检查问卷: https://www.wjx.cn/vm/314729177.aspx
+2025-05-30 15:32:35,944 - __main__ - ERROR - 获取问卷回答数量失败: 404 Client Error: Not Found for url: https://www.wjx.cn/vm/314729177.aspx
+2025-05-30 15:32:35,944 - __main__ - ERROR - 获取回答数量失败，跳过本次检查
+2025-05-30 15:32:54,521 - __main__ - INFO - 程序被用户中断
+2025-05-30 15:32:54,521 - __main__ - INFO - 问卷星监控程序已停止

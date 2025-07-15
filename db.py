@@ -98,7 +98,7 @@ def get_all_replies(id,interval_seconds=60,filename='replies.txt'):
 
 # 主程序，定时爬取回复内容
 def main():
-    group_url = 'https://www.douban.com/group/topic/304993783/'  # 替换成你要爬取的小组帖子链接
+    group_url = 'https://www.douban.com/group/topic/304994211/?start=1700'  # 替换成你要爬取的小组帖子链接
     interval_seconds = 60  # 定时爬取间隔，单位为秒
     filename = 'replies.txt'
 
